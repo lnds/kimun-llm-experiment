@@ -1,0 +1,8 @@
+{"line": 33, "col": 35, "old": "2", "new": "3", "kind": "int", "function": "pretty", "file": "src/black/mode.py", "failing": 1, "candidates": 12}
+{"line": 122, "col": 23, "old": "True", "new": "False", "kind": "ret", "function": "is_changed", "file": "src/black/cache.py", "failing": 1, "candidates": 11}
+{"line": 441, "col": 53, "old": "==", "new": "!=", "kind": "cmp", "function": "visit_STANDALONE_COMMENT", "file": "src/black/linegen.py", "failing": 1, "candidates": 754}
+{"line": 1261, "col": 54, "old": "is not", "new": "is", "kind": "cmp", "function": "_maybe_empty_lines_for_class_or_def", "file": "src/black/lines.py", "failing": 8, "candidates": 752}
+{"line": 2080, "col": 67, "old": "+", "new": "-", "kind": "arith", "function": "do_splitter_match", "file": "src/black/trans.py", "failing": 1, "candidates": 780}
+{"line": 689, "col": 17, "old": "!=", "new": "==", "kind": "cmp", "function": "is_generator", "file": "src/black/nodes.py", "failing": 3, "candidates": 435}
+{"line": 399, "col": 39, "old": "0", "new": "1", "kind": "int", "function": "_convert_unchanged_line_by_line", "file": "src/black/ranges.py", "failing": 1, "candidates": 165}
+{"line": 298, "col": 19, "old": "==", "new": "!=", "kind": "cmp", "function": "is_split_before_delimiter", "file": "src/black/brackets.py", "failing": 5, "candidates": 122}

@@ -1,0 +1,129 @@
+{
+  "target": "black",
+  "score": 65.56207352803692,
+  "grade": "D+",
+  "files_analyzed": 47,
+  "total_loc": 13685,
+  "dimensions": [
+    {
+      "name": "Cognitive Complexity",
+      "weight": 0.32,
+      "score": 31.1816609988477,
+      "grade": "F--"
+    },
+    {
+      "name": "Duplication",
+      "weight": 0.21,
+      "score": 100.0,
+      "grade": "A++"
+    },
+    {
+      "name": "Indentation Complexity",
+      "weight": 0.16,
+      "score": 87.70302479335729,
+      "grade": "A-"
+    },
+    {
+      "name": "Halstead Effort",
+      "weight": 0.21,
+      "score": 64.48384546775105,
+      "grade": "D+"
+    },
+    {
+      "name": "File Size",
+      "weight": 0.1,
+      "score": 70.09850493240775,
+      "grade": "C"
+    }
+  ],
+  "needs_attention": [
+    {
+      "path": "src/black/linegen.py",
+      "score": 32.29060323117631,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 48",
+        "Effort: 20878596",
+        "Size: 1885 LOC"
+      ]
+    },
+    {
+      "path": "src/black/lines.py",
+      "score": 35.01048862334269,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 105",
+        "Effort: 12332768",
+        "Size: 1295 LOC"
+      ]
+    },
+    {
+      "path": "src/black/trans.py",
+      "score": 37.93334119658743,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 46",
+        "Effort: 12820606",
+        "Size: 1370 LOC"
+      ]
+    },
+    {
+      "path": "src/black/nodes.py",
+      "score": 45.707141725605986,
+      "grade": "F-",
+      "issues": [
+        "Cognitive: 177"
+      ]
+    },
+    {
+      "path": "src/blib2to3/pytree.py",
+      "score": 50.96494215283454,
+      "grade": "F",
+      "issues": [
+        "Cognitive: 29",
+        "Effort: 6729234"
+      ]
+    },
+    {
+      "path": "src/blib2to3/pgen2/tokenize.py",
+      "score": 52.26920085197615,
+      "grade": "F",
+      "issues": [
+        "Cognitive: 53"
+      ]
+    },
+    {
+      "path": "src/black/__init__.py",
+      "score": 52.85492170602375,
+      "grade": "F",
+      "issues": [
+        "Cognitive: 31",
+        "Size: 1517 LOC"
+      ]
+    },
+    {
+      "path": "src/black/ranges.py",
+      "score": 56.78570658910403,
+      "grade": "F",
+      "issues": [
+        "Cognitive: 37"
+      ]
+    },
+    {
+      "path": "src/blib2to3/pgen2/parse.py",
+      "score": 57.356227379541025,
+      "grade": "D-",
+      "issues": [
+        "Cognitive: 29"
+      ]
+    },
+    {
+      "path": "src/blackd/__init__.py",
+      "score": 59.607960041102665,
+      "grade": "D-",
+      "issues": [
+        "Cognitive: 45"
+      ]
+    }
+  ]
+}

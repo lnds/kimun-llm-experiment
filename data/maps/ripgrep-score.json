@@ -1,0 +1,128 @@
+{
+  "target": "ripgrep",
+  "score": 76.01819644182666,
+  "grade": "C+",
+  "files_analyzed": 94,
+  "total_loc": 25282,
+  "dimensions": [
+    {
+      "name": "Cognitive Complexity",
+      "weight": 0.32,
+      "score": 56.1645591573208,
+      "grade": "F"
+    },
+    {
+      "name": "Duplication",
+      "weight": 0.21,
+      "score": 99.4952930939008,
+      "grade": "A++"
+    },
+    {
+      "name": "Indentation Complexity",
+      "weight": 0.16,
+      "score": 89.53909010615932,
+      "grade": "A-"
+    },
+    {
+      "name": "Halstead Effort",
+      "weight": 0.21,
+      "score": 75.51090804206859,
+      "grade": "C+"
+    },
+    {
+      "name": "File Size",
+      "weight": 0.1,
+      "score": 69.67980855944941,
+      "grade": "C-"
+    }
+  ],
+  "needs_attention": [
+    {
+      "path": "crates/ignore/src/walk.rs",
+      "score": 42.54430259307775,
+      "grade": "F-",
+      "issues": [
+        "Cognitive: 34",
+        "Effort: 11720133",
+        "Size: 1437 LOC"
+      ]
+    },
+    {
+      "path": "crates/core/flags/hiargs.rs",
+      "score": 46.12671326426413,
+      "grade": "F-",
+      "issues": [
+        "Cognitive: 48",
+        "Size: 1104 LOC"
+      ]
+    },
+    {
+      "path": "crates/ignore/src/dir.rs",
+      "score": 48.742518416482206,
+      "grade": "F-",
+      "issues": [
+        "Cognitive: 42"
+      ]
+    },
+    {
+      "path": "crates/index/src/literal.rs",
+      "score": 52.03874590107396,
+      "grade": "F",
+      "issues": [
+        "Cognitive: 27",
+        "Effort: 6410716"
+      ]
+    },
+    {
+      "path": "crates/globset/src/glob.rs",
+      "score": 52.38426577521141,
+      "grade": "F",
+      "issues": [
+        "Cognitive: 33"
+      ]
+    },
+    {
+      "path": "crates/printer/src/standard.rs",
+      "score": 54.82821451158579,
+      "grade": "F",
+      "issues": [
+        "Cognitive: 22",
+        "Effort: 9654517",
+        "Size: 1170 LOC"
+      ]
+    },
+    {
+      "path": "crates/searcher/src/searcher/core.rs",
+      "score": 59.094799995281704,
+      "grade": "D-",
+      "issues": [
+        "Cognitive: 28"
+      ]
+    },
+    {
+      "path": "crates/core/flags/defs.rs",
+      "score": 60.03464261449054,
+      "grade": "D",
+      "issues": [
+        "Cognitive: 19",
+        "Size: 4900 LOC"
+      ]
+    },
+    {
+      "path": "crates/printer/src/hyperlink/mod.rs",
+      "score": 60.63627438565129,
+      "grade": "D",
+      "issues": [
+        "Cognitive: 27"
+      ]
+    },
+    {
+      "path": "crates/searcher/src/searcher/glue.rs",
+      "score": 61.23269201661846,
+      "grade": "D",
+      "issues": [
+        "Cognitive: 27"
+      ]
+    }
+  ]
+}

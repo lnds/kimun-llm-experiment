@@ -1,0 +1,144 @@
+{
+  "target": "django",
+  "score": 70.27538426597188,
+  "grade": "C",
+  "files_analyzed": 851,
+  "total_loc": 132807,
+  "dimensions": [
+    {
+      "name": "Cognitive Complexity",
+      "weight": 0.32,
+      "score": 41.69734890016804,
+      "grade": "F-"
+    },
+    {
+      "name": "Duplication",
+      "weight": 0.21,
+      "score": 100.0,
+      "grade": "A++"
+    },
+    {
+      "name": "Indentation Complexity",
+      "weight": 0.16,
+      "score": 84.52544234303338,
+      "grade": "B+"
+    },
+    {
+      "name": "Halstead Effort",
+      "weight": 0.21,
+      "score": 71.33649369771649,
+      "grade": "C"
+    },
+    {
+      "name": "File Size",
+      "weight": 0.1,
+      "score": 74.27498166512306,
+      "grade": "C+"
+    }
+  ],
+  "needs_attention": [
+    {
+      "path": "django/contrib/admin/static/admin/js/vendor/jquery/jquery.js",
+      "score": 11.030177844340937,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 2584",
+        "Indent: 1.9",
+        "Effort: 143124099",
+        "Size: 6767 LOC"
+      ]
+    },
+    {
+      "path": "django/contrib/admin/static/admin/js/vendor/xregexp/xregexp.js",
+      "score": 24.746134885339348,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 1011",
+        "Effort: 61042707",
+        "Size: 3817 LOC"
+      ]
+    },
+    {
+      "path": "django/contrib/admin/static/admin/js/vendor/select2/select2.full.js",
+      "score": 25.54273005507723,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 858",
+        "Effort: 76659027",
+        "Size: 5102 LOC"
+      ]
+    },
+    {
+      "path": "django/db/migrations/autodetector.py",
+      "score": 29.89610730127213,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 88",
+        "Indent: 2.0",
+        "Effort: 12220043",
+        "Size: 1690 LOC"
+      ]
+    },
+    {
+      "path": "django/db/models/fields/related.py",
+      "score": 30.571690390048747,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 91",
+        "Indent: 1.9",
+        "Effort: 12984679",
+        "Size: 1752 LOC"
+      ]
+    },
+    {
+      "path": "django/db/models/sql/query.py",
+      "score": 30.62655046083569,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 94",
+        "Effort: 20033532",
+        "Size: 1910 LOC"
+      ]
+    },
+    {
+      "path": "django/db/models/base.py",
+      "score": 31.84020454979052,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 168",
+        "Effort: 14329853",
+        "Size: 2006 LOC"
+      ]
+    },
+    {
+      "path": "django/db/models/query.py",
+      "score": 32.746004324078775,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 81",
+        "Effort: 20242226",
+        "Size: 2183 LOC"
+      ]
+    },
+    {
+      "path": "django/db/models/sql/compiler.py",
+      "score": 33.16546653297282,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 129",
+        "Effort: 14173837",
+        "Size: 1714 LOC"
+      ]
+    },
+    {
+      "path": "django/db/migrations/operations/models.py",
+      "score": 33.619137513567324,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 159",
+        "Effort: 9586945",
+        "Size: 1050 LOC"
+      ]
+    }
+  ]
+}

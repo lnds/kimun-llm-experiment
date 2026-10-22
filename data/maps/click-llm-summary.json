@@ -1,0 +1,23 @@
+{
+ "summary": [
+  {
+   "label": "an LLM risk",
+   "share": 0.38667621776504296,
+   "heat": -1.0
+  },
+  {
+   "label": "needing care",
+   "share": 0.5502865329512894,
+   "heat": 0.0
+  },
+  {
+   "label": "LLM-friendly",
+   "share": 0.06303724928366762,
+   "heat": 1.0
+  }
+ ],
+ "callouts": [
+  "Most LLM risk: src/click/",
+  "Most LLM-friendly: docs/"
+ ]
+}

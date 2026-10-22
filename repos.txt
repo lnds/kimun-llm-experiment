@@ -1,0 +1,10 @@
+# nombre  url  commit  extras-de-pip (solo los repos del experimento)
+phoenix  https://github.com/phoenixframework/phoenix.git  e5880ef7390d6fb4759d6cf9a957a310cefca7c4  -
+flask    https://github.com/pallets/flask.git             d086db856be187255b8ec61ef409357393020f32  .[async]
+express  https://github.com/expressjs/express.git         0dee2c52c7c873498f8ed7d8ee4ddd0a04d3ada8  -
+ripgrep  https://github.com/BurntSushi/ripgrep.git        3fce3b5bb0236da2df6d99672afb8a719642eca7  -
+click    https://github.com/pallets/click.git             2247b35ea1c47c727d7a06e51fa280e12a863ff6  .
+django   https://github.com/django/django.git             79502d08405dbf24efa39e8731320f31035b9e9c  -
+black    https://github.com/psf/black.git                 287d570966edf07035498948206b37dfd35b51e3  .[d,jupyter]
+redis    https://github.com/redis/redis.git               e4eb89782d70c26b07a29b956472004cb8a78b80  -
+kimun    https://github.com/lnds/kimun.git                7d441d1fd7ba2bcbd32004c94c3176d37ccdee18  -

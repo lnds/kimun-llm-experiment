@@ -1,0 +1,23 @@
+{
+ "summary": [
+  {
+   "label": "an LLM risk",
+   "share": 0.5328296811961079,
+   "heat": -1.0
+  },
+  {
+   "label": "needing care",
+   "share": 0.349418558658334,
+   "heat": 0.0
+  },
+  {
+   "label": "LLM-friendly",
+   "share": 0.1177517601455581,
+   "heat": 1.0
+  }
+ ],
+ "callouts": [
+  "Most LLM risk: crates/core/flags/",
+  "Most LLM-friendly: ci/"
+ ]
+}

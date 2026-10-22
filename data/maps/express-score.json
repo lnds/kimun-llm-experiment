@@ -1,0 +1,85 @@
+{
+  "target": "express",
+  "score": 83.2429348935843,
+  "grade": "B+",
+  "files_analyzed": 7,
+  "total_loc": 1141,
+  "dimensions": [
+    {
+      "name": "Cognitive Complexity",
+      "weight": 0.32,
+      "score": 63.066473403896715,
+      "grade": "D+"
+    },
+    {
+      "name": "Duplication",
+      "weight": 0.21,
+      "score": 100.0,
+      "grade": "A++"
+    },
+    {
+      "name": "Indentation Complexity",
+      "weight": 0.16,
+      "score": 100.0,
+      "grade": "A++"
+    },
+    {
+      "name": "Halstead Effort",
+      "weight": 0.21,
+      "score": 76.48411144922552,
+      "grade": "C+"
+    },
+    {
+      "name": "File Size",
+      "weight": 0.1,
+      "score": 100.0,
+      "grade": "A++"
+    }
+  ],
+  "needs_attention": [
+    {
+      "path": "lib/response.js",
+      "score": 62.33384952728547,
+      "grade": "D",
+      "issues": [
+        "Cognitive: 30"
+      ]
+    },
+    {
+      "path": "lib/application.js",
+      "score": 84.60003587843866,
+      "grade": "B+",
+      "issues": []
+    },
+    {
+      "path": "lib/utils.js",
+      "score": 92.87140256996776,
+      "grade": "A",
+      "issues": []
+    },
+    {
+      "path": "lib/view.js",
+      "score": 93.64305747830414,
+      "grade": "A+",
+      "issues": []
+    },
+    {
+      "path": "lib/request.js",
+      "score": 95.46844433256618,
+      "grade": "A+",
+      "issues": []
+    },
+    {
+      "path": "index.js",
+      "score": 100.00000000000001,
+      "grade": "A++",
+      "issues": []
+    },
+    {
+      "path": "lib/express.js",
+      "score": 100.00000000000001,
+      "grade": "A++",
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{"line": 483, "col": 30, "old": "0", "new": "1", "kind": "int", "function": "pop", "file": "src/flask/ctx.py", "failing": 8, "candidates": 33}
+{"line": 107, "col": 34, "old": "in", "new": "not in", "kind": "cmp", "function": "check", "file": "src/flask/json/tag.py", "failing": 2, "candidates": 11}
+{"line": 657, "col": 49, "old": "!=", "new": "==", "kind": "cmp", "function": "add_url_rule", "file": "src/flask/sansio/app.py", "failing": 15, "candidates": 37}
+{"line": 116, "col": 22, "old": "is not", "new": "is", "kind": "cmp", "function": "list_templates", "file": "src/flask/templating.py", "failing": 1, "candidates": 7}
+{"line": 275, "col": 34, "old": "is not", "new": "is", "kind": "cmp", "function": "redirect", "file": "src/flask/helpers.py", "failing": 2, "candidates": 28}
+{"line": 212, "col": 23, "old": "False", "new": "True", "kind": "ret", "function": "from_pyfile", "file": "src/flask/config.py", "failing": 2, "candidates": 19}
+{"line": 354, "col": 11, "old": "not ", "new": "", "kind": "not", "function": "save_session", "file": "src/flask/sessions.py", "failing": 13, "candidates": 8}
+{"line": 1289, "col": 25, "old": "3", "new": "4", "kind": "int", "function": "make_response", "file": "src/flask/app.py", "failing": 3, "candidates": 108}
+{"line": 226, "col": 35, "old": "1", "new": "2", "kind": "int", "function": "prepare_import", "file": "src/flask/cli.py", "failing": 4, "candidates": 84}
+{"line": 385, "col": 34, "old": "is", "new": "is not", "kind": "cmp", "function": "extend", "file": "src/flask/sansio/blueprints.py", "failing": 6, "candidates": 40}

@@ -1,0 +1,23 @@
+{
+ "summary": [
+  {
+   "label": "an LLM risk",
+   "share": 0.02904613209214635,
+   "heat": -1.0
+  },
+  {
+   "label": "needing care",
+   "share": 0.6638779237612679,
+   "heat": 0.0
+  },
+  {
+   "label": "LLM-friendly",
+   "share": 0.30707594414658573,
+   "heat": 1.0
+  }
+ ],
+ "callouts": [
+  "Most LLM risk: assets/js/phoenix/",
+  "Most LLM-friendly: lib/mix/tasks/"
+ ]
+}

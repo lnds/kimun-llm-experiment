@@ -1,0 +1,141 @@
+{
+  "target": "redis",
+  "score": 50.533182545072194,
+  "grade": "F",
+  "files_analyzed": 271,
+  "total_loc": 154289,
+  "dimensions": [
+    {
+      "name": "Cognitive Complexity",
+      "weight": 0.32,
+      "score": 15.679363203020102,
+      "grade": "F--"
+    },
+    {
+      "name": "Duplication",
+      "weight": 0.21,
+      "score": 100.0,
+      "grade": "A++"
+    },
+    {
+      "name": "Indentation Complexity",
+      "weight": 0.16,
+      "score": 91.95299520342856,
+      "grade": "A"
+    },
+    {
+      "name": "Halstead Effort",
+      "weight": 0.21,
+      "score": 30.43622327895216,
+      "grade": "F--"
+    },
+    {
+      "name": "File Size",
+      "weight": 0.1,
+      "score": 34.11700198977243,
+      "grade": "F--"
+    }
+  ],
+  "needs_attention": [
+    {
+      "path": "src/quicklist.c",
+      "score": 16.635921737371696,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 493",
+        "Effort: 69835317",
+        "Size: 2777 LOC"
+      ]
+    },
+    {
+      "path": "src/redis-cli.c",
+      "score": 16.918613064319757,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 303",
+        "Effort: 249884091",
+        "Size: 9569 LOC"
+      ]
+    },
+    {
+      "path": "src/t_stream.c",
+      "score": 17.818727036607566,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 227",
+        "Effort: 132193422",
+        "Size: 4541 LOC"
+      ]
+    },
+    {
+      "path": "src/t_hash.c",
+      "score": 18.994873128128912,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 123",
+        "Effort: 118127788",
+        "Size: 4715 LOC"
+      ]
+    },
+    {
+      "path": "src/cluster_legacy.c",
+      "score": 19.22623865226925,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 257",
+        "Effort: 76464407",
+        "Size: 4383 LOC"
+      ]
+    },
+    {
+      "path": "src/sentinel.c",
+      "score": 19.46216026830696,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 160",
+        "Effort: 74211400",
+        "Size: 3813 LOC"
+      ]
+    },
+    {
+      "path": "src/t_zset.c",
+      "score": 19.510971730492443,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 155",
+        "Effort: 79644735",
+        "Size: 3507 LOC"
+      ]
+    },
+    {
+      "path": "src/rax.c",
+      "score": 20.229524794362227,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 114",
+        "Effort: 44834099",
+        "Size: 1812 LOC"
+      ]
+    },
+    {
+      "path": "modules/vector-sets/hnsw.c",
+      "score": 20.332189126712997,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 102",
+        "Effort: 40424108",
+        "Size: 1871 LOC"
+      ]
+    },
+    {
+      "path": "src/bitops.c",
+      "score": 21.295159910729318,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 187",
+        "Effort: 37295414",
+        "Size: 1985 LOC"
+      ]
+    }
+  ]
+}

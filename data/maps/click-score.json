@@ -1,0 +1,114 @@
+{
+  "target": "click",
+  "score": 72.5285732634659,
+  "grade": "C",
+  "files_analyzed": 19,
+  "total_loc": 6980,
+  "dimensions": [
+    {
+      "name": "Cognitive Complexity",
+      "weight": 0.32,
+      "score": 52.76953383292924,
+      "grade": "F"
+    },
+    {
+      "name": "Duplication",
+      "weight": 0.21,
+      "score": 100.0,
+      "grade": "A++"
+    },
+    {
+      "name": "Indentation Complexity",
+      "weight": 0.16,
+      "score": 90.10353311528854,
+      "grade": "A"
+    },
+    {
+      "name": "Halstead Effort",
+      "weight": 0.21,
+      "score": 60.954319024837694,
+      "grade": "D"
+    },
+    {
+      "name": "File Size",
+      "weight": 0.1,
+      "score": 74.25350143266476,
+      "grade": "C+"
+    }
+  ],
+  "needs_attention": [
+    {
+      "path": "src/click/core.py",
+      "score": 29.66029351071557,
+      "grade": "F--",
+      "issues": [
+        "Cognitive: 53",
+        "Effort: 25885479",
+        "Size: 1958 LOC"
+      ]
+    },
+    {
+      "path": "src/click/_textwrap.py",
+      "score": 46.44021919163477,
+      "grade": "F-",
+      "issues": [
+        "Cognitive: 61",
+        "Indent: 2.0"
+      ]
+    },
+    {
+      "path": "src/click/_termui_impl.py",
+      "score": 56.757339690803214,
+      "grade": "F",
+      "issues": [
+        "Cognitive: 36"
+      ]
+    },
+    {
+      "path": "src/click/parser.py",
+      "score": 72.8480848192546,
+      "grade": "C",
+      "issues": [
+        "Cognitive: 16"
+      ]
+    },
+    {
+      "path": "src/click/types.py",
+      "score": 74.54936932130241,
+      "grade": "C+",
+      "issues": []
+    },
+    {
+      "path": "src/click/decorators.py",
+      "score": 74.94054685642627,
+      "grade": "C+",
+      "issues": []
+    },
+    {
+      "path": "src/click/exceptions.py",
+      "score": 76.64054827200232,
+      "grade": "C+",
+      "issues": [
+        "Cognitive: 18"
+      ]
+    },
+    {
+      "path": "src/click/termui.py",
+      "score": 79.55301904056644,
+      "grade": "B-",
+      "issues": []
+    },
+    {
+      "path": "src/click/shell_completion.py",
+      "score": 82.5171504425771,
+      "grade": "B",
+      "issues": []
+    },
+    {
+      "path": ".devcontainer/on-create-command.sh",
+      "score": 86.70886075949367,
+      "grade": "B+",
+      "issues": []
+    }
+  ]
+}

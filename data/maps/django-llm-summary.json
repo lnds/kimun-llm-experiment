@@ -1,0 +1,23 @@
+{
+ "summary": [
+  {
+   "label": "an LLM risk",
+   "share": 0.5664460457656599,
+   "heat": -1.0
+  },
+  {
+   "label": "needing care",
+   "share": 0.3078075703840912,
+   "heat": 0.0
+  },
+  {
+   "label": "LLM-friendly",
+   "share": 0.12574638385024886,
+   "heat": 1.0
+  }
+ ],
+ "callouts": [
+  "Most LLM risk: django/contrib/admin/",
+  "Most LLM-friendly: django/conf/"
+ ]
+}

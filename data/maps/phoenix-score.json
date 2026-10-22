@@ -1,0 +1,109 @@
+{
+  "target": "phoenix",
+  "score": 92.74017750734048,
+  "grade": "A",
+  "files_analyzed": 111,
+  "total_loc": 16973,
+  "dimensions": [
+    {
+      "name": "Cognitive Complexity",
+      "weight": 0.32,
+      "score": 92.23149889643733,
+      "grade": "A"
+    },
+    {
+      "name": "Duplication",
+      "weight": 0.21,
+      "score": 100.0,
+      "grade": "A++"
+    },
+    {
+      "name": "Indentation Complexity",
+      "weight": 0.16,
+      "score": 99.59416826933587,
+      "grade": "A++"
+    },
+    {
+      "name": "Halstead Effort",
+      "weight": 0.21,
+      "score": 79.66534077940771,
+      "grade": "B-"
+    },
+    {
+      "name": "File Size",
+      "weight": 0.1,
+      "score": 95.61309373711188,
+      "grade": "A+"
+    }
+  ],
+  "needs_attention": [
+    {
+      "path": "assets/js/phoenix/socket.js",
+      "score": 59.565647083839195,
+      "grade": "D-",
+      "issues": [
+        "Cognitive: 32"
+      ]
+    },
+    {
+      "path": "lib/phoenix/controller.ex",
+      "score": 78.80841534411856,
+      "grade": "B-",
+      "issues": [
+        "Effort: 7214295"
+      ]
+    },
+    {
+      "path": "installer/lib/mix/tasks/phx.new.ex",
+      "score": 79.31065609136331,
+      "grade": "B-",
+      "issues": [
+        "Cognitive: 16"
+      ]
+    },
+    {
+      "path": "lib/mix/phoenix/schema.ex",
+      "score": 80.5400734103086,
+      "grade": "B",
+      "issues": []
+    },
+    {
+      "path": "lib/phoenix/router.ex",
+      "score": 84.63061969769569,
+      "grade": "B+",
+      "issues": [
+        "Effort: 5348103"
+      ]
+    },
+    {
+      "path": "installer/lib/phx_new/generator.ex",
+      "score": 84.83235100150978,
+      "grade": "B+",
+      "issues": []
+    },
+    {
+      "path": "assets/js/phoenix/channel.js",
+      "score": 85.77170453874109,
+      "grade": "B+",
+      "issues": []
+    },
+    {
+      "path": "lib/phoenix/socket.ex",
+      "score": 87.0574244047615,
+      "grade": "A-",
+      "issues": []
+    },
+    {
+      "path": "lib/phoenix/verified_routes.ex",
+      "score": 87.34129837273463,
+      "grade": "A-",
+      "issues": []
+    },
+    {
+      "path": "assets/js/phoenix/ajax.js",
+      "score": 87.61542705509328,
+      "grade": "A-",
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "target": "flask",
+  "score": 83.23696466169342,
+  "grade": "B+",
+  "files_analyzed": 26,
+  "total_loc": 4282,
+  "dimensions": [
+    {
+      "name": "Cognitive Complexity",
+      "weight": 0.32,
+      "score": 63.121672115833725,
+      "grade": "D+"
+    },
+    {
+      "name": "Duplication",
+      "weight": 0.21,
+      "score": 100.0,
+      "grade": "A++"
+    },
+    {
+      "name": "Indentation Complexity",
+      "weight": 0.16,
+      "score": 93.28097445677992,
+      "grade": "A+"
+    },
+    {
+      "name": "Halstead Effort",
+      "weight": 0.21,
+      "score": 83.74568788677095,
+      "grade": "B+"
+    },
+    {
+      "name": "File Size",
+      "weight": 0.1,
+      "score": 95.26479215319944,
+      "grade": "A+"
+    }
+  ],
+  "needs_attention": [
+    {
+      "path": "src/flask/cli.py",
+      "score": 60.79223493662484,
+      "grade": "D",
+      "issues": [
+        "Cognitive: 28"
+      ]
+    },
+    {
+      "path": "src/flask/app.py",
+      "score": 62.281387861678134,
+      "grade": "D",
+      "issues": [
+        "Cognitive: 26"
+      ]
+    },
+    {
+      "path": "src/flask/sansio/blueprints.py",
+      "score": 64.01115298086738,
+      "grade": "D+",
+      "issues": [
+        "Cognitive: 30"
+      ]
+    },
+    {
+      "path": "src/flask/sansio/scaffold.py",
+      "score": 67.84633933166931,
+      "grade": "C-",
+      "issues": [
+        "Cognitive: 24"
+      ]
+    },
+    {
+      "path": "src/flask/views.py",
+      "score": 82.11765337290866,
+      "grade": "B",
+      "issues": []
+    },
+    {
+      "path": "src/flask/helpers.py",
+      "score": 85.06010860501046,
+      "grade": "B+",
+      "issues": []
+    },
+    {
+      "path": ".devcontainer/on-create-command.sh",
+      "score": 86.70886075949367,
+      "grade": "B+",
+      "issues": []
+    },
+    {
+      "path": "src/flask/debughelpers.py",
+      "score": 86.97267492649468,
+      "grade": "B+",
+      "issues": []
+    },
+    {
+      "path": "src/flask/sansio/app.py",
+      "score": 90.72569758018719,
+      "grade": "A",
+      "issues": []
+    },
+    {
+      "path": "src/flask/templating.py",
+      "score": 91.05566664218495,
+      "grade": "A",
+      "issues": []
+    }
+  ]
+}

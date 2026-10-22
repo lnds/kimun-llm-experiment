@@ -1,0 +1,23 @@
+{
+ "summary": [
+  {
+   "label": "an LLM risk",
+   "share": 0.4747781410555815,
+   "heat": -1.0
+  },
+  {
+   "label": "needing care",
+   "share": 0.2919196637085474,
+   "heat": 0.0
+  },
+  {
+   "label": "LLM-friendly",
+   "share": 0.2333021952358711,
+   "heat": 1.0
+  }
+ ],
+ "callouts": [
+  "Most LLM risk: src/flask/sansio/",
+  "Most LLM-friendly: docs/"
+ ]
+}

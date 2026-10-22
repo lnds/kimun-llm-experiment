@@ -1,0 +1,122 @@
+{
+  "target": "kimun",
+  "score": 91.4399195548387,
+  "grade": "A",
+  "files_analyzed": 222,
+  "total_loc": 31975,
+  "dimensions": [
+    {
+      "name": "Cognitive Complexity",
+      "weight": 0.32,
+      "score": 86.81294761532448,
+      "grade": "B+"
+    },
+    {
+      "name": "Duplication",
+      "weight": 0.21,
+      "score": 100.0,
+      "grade": "A++"
+    },
+    {
+      "name": "Indentation Complexity",
+      "weight": 0.16,
+      "score": 93.58371341170198,
+      "grade": "A+"
+    },
+    {
+      "name": "Halstead Effort",
+      "weight": 0.21,
+      "score": 84.29518149621354,
+      "grade": "B+"
+    },
+    {
+      "name": "File Size",
+      "weight": 0.1,
+      "score": 99.84394057857702,
+      "grade": "A++"
+    }
+  ],
+  "needs_attention": [
+    {
+      "path": "src/docs/markdown.rs",
+      "score": 65.73714810938955,
+      "grade": "D+",
+      "issues": [
+        "Cognitive: 18",
+        "Effort: 3812125"
+      ]
+    },
+    {
+      "path": "src/unit_bodies.rs",
+      "score": 70.2092266874482,
+      "grade": "C",
+      "issues": [
+        "Cognitive: 20"
+      ]
+    },
+    {
+      "path": "src/loc/mod.rs",
+      "score": 71.2738040412141,
+      "grade": "C",
+      "issues": [
+        "Cognitive: 19"
+      ]
+    },
+    {
+      "path": "src/hal/tokenizer.rs",
+      "score": 71.60996661102658,
+      "grade": "C",
+      "issues": [
+        "Cognitive: 22"
+      ]
+    },
+    {
+      "path": "src/cli_help.rs",
+      "score": 72.60002285897981,
+      "grade": "C",
+      "issues": [
+        "Cognitive: 19"
+      ]
+    },
+    {
+      "path": "src/deps/ruby_literals.rs",
+      "score": 72.92812711190273,
+      "grade": "C",
+      "issues": [
+        "Effort: 3841663"
+      ]
+    },
+    {
+      "path": "src/deps/golang_source.rs",
+      "score": 73.18703607537753,
+      "grade": "C+",
+      "issues": [
+        "Cognitive: 16"
+      ]
+    },
+    {
+      "path": "src/smells/rules.rs",
+      "score": 73.40616995534873,
+      "grade": "C+",
+      "issues": [
+        "Cognitive: 20"
+      ]
+    },
+    {
+      "path": "src/dups/mod.rs",
+      "score": 73.959614045714,
+      "grade": "C+",
+      "issues": [
+        "Cognitive: 19"
+      ]
+    },
+    {
+      "path": "src/test_blocks.rs",
+      "score": 74.05395328682813,
+      "grade": "C+",
+      "issues": [
+        "Cognitive: 18"
+      ]
+    }
+  ]
+}
