@@ -56,7 +56,8 @@ Cada copia de `setup_trials.py` lleva un historial de git nuevo, para que `git d
 
 ## Cómo se corrió
 
-- **Modelo:** Claude Sonnet, como subagentes de Claude Code (no con `claude -p`), con 20 agentes a la vez. `analyze.py` lee los dos formatos de sesión.
+- **Con quién:** el experimento se diseñó, se corrió y se analizó con Claude (Opus) en Claude Code. Claude escribió los scripts de este repositorio.
+- **Modelo de los agentes:** Claude Sonnet, como subagentes de Claude Code (no con `claude -p`), con 20 agentes a la vez. `analyze.py` lee los dos formatos de sesión.
 - **Fecha:** 22 de octubre de 2026, en macOS con Python 3.13.
 - **Mapas:** kimun 0.44. En black se excluyó `profiling/` (datos de prueba) y en redis `deps/` (código de terceros).
 
