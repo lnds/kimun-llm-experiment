@@ -46,6 +46,8 @@ def main():
         print(f"{g:5} n={len(x):2}  suite pasa {sum(r['passed'] for r in x)}/{len(x)}  "
               f"herramientas mediana {st.median(r['tools'] for r in x)}  "
               f"segundos mediana {st.median(r['seconds'] for r in x):.0f}  "
+              f"tokens de entrada mediana {st.median(r['input_tokens_total'] for r in x):.0f}  "
+              f"crecimiento del contexto mediana {st.median(r['context_growth'] for r in x):.0f}  "
               f"líneas mediana {st.median(r['file_lines'] for r in x)}")
     scores = [r["score"] for r in rows]
     print(f"\nSpearman nota ~ herramientas: {spearman(scores, [r['tools'] for r in rows]):.2f}")

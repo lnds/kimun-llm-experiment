@@ -14,9 +14,11 @@ Dos partes:
 | Diagnóstico correcto | 13/13 | 12/12 |
 | La suite pasa | 11/13 | 12/12 |
 | Herramientas usadas (mediana) | 6 | 7 |
+| Tokens de entrada acumulados (mediana) | 355 mil | 389 mil |
+| Código que el agente sumó al contexto (mediana) | 10 mil tokens | 10 mil tokens |
 | Tamaño del archivo (mediana) | 385 líneas | 1.145 líneas |
 
-La correlación de Spearman entre la nota del archivo y las herramientas que usó el agente es −0,26: con 25 casos, ruido. El único caso caro fue `black/linegen.py` (nota 32,3): 36 herramientas y 5,5 minutos, contra 4 a 12 herramientas en el resto. Los dos casos en que la suite no pasa (t08, t13) son archivos verdes: el agente encontró el bug, aplicó el arreglo con un `sed -i` de sintaxis GNU que falla en macOS y reportó éxito sin ver el resultado.
+La correlación de Spearman entre la nota del archivo y las herramientas que usó el agente es −0,26: con 25 casos, ruido. Medida en tokens de entrada acumulados, la correlación es −0,18. Cada sesión parte con unos 52 mil tokens fijos (instrucciones y herramientas), que se reenvían en cada turno; lo que el agente suma al contexto leyendo código es `context_growth` en `data/results.json`. Los tokens de salida que registran los transcripts no son confiables y no se usan. El único caso caro fue `black/linegen.py` (nota 32,3): 36 herramientas, 5,5 minutos y 2,8 millones de tokens de entrada, contra 4 a 12 herramientas y una mediana de 370 mil tokens en el resto. Los dos casos en que la suite no pasa (t08, t13) son archivos verdes: el agente encontró el bug, aplicó el arreglo con un `sed -i` de sintaxis GNU que falla en macOS y reportó éxito sin ver el resultado.
 
 ```bash
 python3 scripts/summary.py    # la tabla por intento y los agregados, desde data/results.json
@@ -32,7 +34,7 @@ python3 scripts/summary.py    # la tabla por intento y los agregados, desde data
 | `data/maps/` | `km score` de cada repo y el resumen de su mapa (líneas en cada franja, directorios destacados) |
 | `data/mutations/` | Las mutaciones: archivo, línea, columna, token original y mutado, tests que fallan |
 | `data/trials.json` | Las 25 copias: qué mutación lleva cada una y la nota de su archivo |
-| `data/results.json` | Cada intento: herramientas, contexto, segundos, si la suite pasa, si el arreglo deshace la mutación exacta y el reporte final del agente |
+| `data/results.json` | Cada intento: herramientas, tokens de entrada acumulados, contexto inicial y su crecimiento, segundos, si la suite pasa, si el arreglo deshace la mutación exacta y el reporte final del agente |
 
 ## Reproducir
 

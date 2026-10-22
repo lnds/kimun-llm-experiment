@@ -19,7 +19,7 @@ WORK = ROOT / "work"
 
 def session(path, tid):
     rows = [json.loads(l) for l in open(path) if l.strip()]
-    tools, turns, ctx_peak, outside, seen = 0, 0, 0, [], set()
+    tools, outside, usage = 0, [], {}
     seconds = None
     for r in rows:
         if r.get("type") == "result":
@@ -27,13 +27,9 @@ def session(path, tid):
         msg = r.get("message")
         if r.get("type") != "assistant" or not isinstance(msg, dict):
             continue
-        if msg.get("id") not in seen:
-            seen.add(msg.get("id"))
-            turns += 1
-            u = msg.get("usage") or {}
-            ctx = (u.get("input_tokens", 0) + u.get("cache_read_input_tokens", 0)
-                   + u.get("cache_creation_input_tokens", 0))
-            ctx_peak = max(ctx_peak, ctx)
+        if msg.get("usage"):
+            # El último registro de cada mensaje trae su uso final.
+            usage[msg.get("id")] = msg["usage"]
         for b in msg.get("content") or []:
             if b.get("type") != "tool_use":
                 continue
@@ -47,7 +43,11 @@ def session(path, tid):
         stamps = [datetime.fromisoformat(r["timestamp"].replace("Z", "+00:00"))
                   for r in rows if r.get("timestamp")]
         seconds = (max(stamps) - min(stamps)).total_seconds()
-    return dict(tools=tools, turns=turns, ctx_peak=ctx_peak, seconds=seconds,
+    # Contexto de entrada de cada turno: lo nuevo más lo que se reenvía desde la caché.
+    ctx = [u.get("input_tokens", 0) + u.get("cache_read_input_tokens", 0)
+           + u.get("cache_creation_input_tokens", 0) for u in usage.values()]
+    return dict(tools=tools, turns=len(ctx), ctx_peak=max(ctx), seconds=seconds,
+                input_tokens_total=sum(ctx), context_start=ctx[0], context_growth=max(ctx) - ctx[0],
                 outside=sorted(set(outside)))
 
 
