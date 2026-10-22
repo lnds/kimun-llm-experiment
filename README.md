@@ -1,6 +1,6 @@
 # ¿Le importa a un agente la salud del código?
 
-Datos y scripts del post *El mapa decía rojo. Al agente no le importó* <!-- TODO: enlace al post -->.
+Datos y scripts del post *Puse a prueba el mapa para agentes de Kimün*, del blog de [kimun.tools](https://kimun.tools/blog/) <!-- TODO: enlace al post -->.
 
 Dos partes:
 
