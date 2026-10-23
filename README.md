@@ -1,13 +1,14 @@
 # ¿Le importa a un agente la salud del código?
 
-Datos y scripts del post *¿Tu código es amistoso para un LLM?*, del blog de [kimun.tools](https://kimun.tools/blog/) <!-- TODO: enlace al post -->.
+Datos y scripts del artículo [*¿Tu código es amistoso para un LLM?*](https://kimun.tools/blog/is-your-code-llm-friendly/) del blog de Kimün ([en inglés](https://kimun.tools/en/blog/is-your-code-llm-friendly/)).
 
-Dos partes:
+Tres partes:
 
 1. **El mapa.** `km map --color-by llm` de [kimun](https://kimun.tools) sobre nueve proyectos conocidos. Cada archivo se pinta según su nota de `km score`: verde desde 95 ("amistoso para un LLM"), gris entre 70 y 95, rojo bajo 70. El umbral de 95 es la contraparte, en la escala de kimun, del 9,5 de Code Health que CodeScene propone para trabajar con agentes. No es una equivalencia calibrada.
-2. **El experimento.** 25 bugs de un token inyectados en click, flask y black: 13 en archivos verdes (nota ≥ 85) y 12 en rojos (< 65). Un agente por bug intenta arreglarlo, y luego se vuelve a correr la suite completa.
+2. **Primera ronda.** 25 bugs de un token inyectados en click, flask y black: 13 en archivos verdes (nota ≥ 85) y 12 en rojos (< 65). Un agente por bug intenta arreglarlo, y luego se vuelve a correr la suite completa.
+3. **Segunda ronda.** 22 bugs en [sc-cli](https://github.com/lnds/sc-cli) (Rust, nota F- 40,0), un proyecto que casi seguro no está en los datos de entrenamiento del modelo. Las mutaciones las generó [kalku](https://kalku.tools).
 
-## Resultados
+## Resultados de la primera ronda
 
 | | Verdes (n=13) | Rojos (n=12) |
 |---|---|---|
@@ -24,16 +25,32 @@ La correlación de Spearman entre la nota del archivo y las herramientas que us�
 python3 scripts/summary.py    # la tabla por intento y los agregados, desde data/results.json
 ```
 
+## Resultados de la segunda ronda
+
+| | Verdes (n=10) | Rojos (n=12) |
+|---|---|---|
+| La suite pasa | 10/10 | 11/12 |
+| Herramientas usadas (mediana) | 6 | 8 |
+| Tokens de entrada acumulados (mediana) | 356 mil | 473 mil |
+| Código que el agente sumó al contexto (mediana) | 9 mil tokens | 11 mil tokens |
+| Tamaño del archivo (mediana) | 591 líneas | 2.123 líneas |
+
+Los verdes están en `git/operations.rs` (92,5) y `git/mod.rs` (99,5); los rojos en `ui/mod.rs` (15,3), `main.rs` (30,7) y `api/client.rs` (57,3). Spearman entre la nota y los tokens: −0,61. El intento rojo gastó más tokens que el verde en el 90% de los pares, y una prueba de permutación sobre la diferencia de medianas da p = 0,0006. El único intento fallido (r12, `main.rs`) no encontró el bug y atribuyó la falla al entorno.
+
+kalku lanzó 304 mutantes en esos archivos (todos en los verdes y en `config.rs`, 60 por archivo en los rojos) y la suite mató 49. De ellos se descartaron los cambios de texto y los que borran una rama completa, y quedaron los que hacen fallar entre 1 y 15 pruebas.
+
 ## Contenido
 
 | Ruta | Qué es |
 |---|---|
 | `repos.txt` | Los repos medidos, con el commit exacto |
-| `prompt.md` | El prompt de cada agente, idéntico para todos |
+| `prompt.md`, `prompt-rust.md` | El prompt de cada agente en cada ronda, idéntico para todos |
 | `capturas/` | Los mapas de cada repo |
 | `data/maps/` | `km score` de cada repo y el resumen de su mapa (líneas en cada franja, directorios destacados) |
 | `data/mutations/` | Las mutaciones: archivo, línea, columna, token original y mutado, tests que fallan |
 | `data/trials.json` | Las 25 copias: qué mutación lleva cada una y la nota de su archivo |
+| `data/kalku/` | Los reportes de kalku sobre sc-cli y, en `verified.jsonl`, cuántas pruebas hace fallar cada mutante muerto |
+| `data/mutations/sc-cli.jsonl`, `data/trials-sc-cli.json`, `data/results-sc-cli.json` | Lo mismo para la segunda ronda |
 | `data/results.json` | Cada intento: herramientas, tokens de entrada acumulados, contexto inicial y su crecimiento, segundos, si la suite pasa, si el arreglo deshace la mutación exacta y el reporte final del agente |
 
 ## Reproducir
@@ -54,18 +71,21 @@ python3 scripts/summary.py work/results.json
 
 Cada copia de `setup_trials.py` lleva un historial de git nuevo, para que `git diff` no delate la mutación, y su propio entorno, porque uno editable compartido importaría el código sin mutar.
 
+La segunda ronda usa sc-cli en el commit `0d9c860` y kalku 0.24: `kalku init` en una copia, `kalku run` sobre cada archivo, `scripts/failing_rs.py` para contar las pruebas que rompe cada mutante muerto y `scripts/setup_trials_rs.py` para armar las copias. Las pruebas CLI de sc-cli leen la configuración del usuario (`~/.config/sc-cli`), así que conviene correrlas en una máquina sin ella.
+
 `run_trials.sh` corre los agentes sin pedir permisos (`--dangerously-skip-permissions`). Hazlo en una máquina o un contenedor desechable. `MODEL` y `JOBS` eligen el modelo (por omisión `sonnet`) y cuántos corren a la vez (4).
 
 ## Cómo se corrió
 
 - **Con quién:** el experimento se diseñó, se corrió y se analizó con Claude (Opus) en Claude Code. Claude escribió los scripts de este repositorio.
 - **Modelo de los agentes:** Claude Sonnet, como subagentes de Claude Code (no con `claude -p`), con 20 agentes a la vez. `analyze.py` lee los dos formatos de sesión.
-- **Fecha:** 22 de octubre de 2026, en macOS con Python 3.13.
+- **Fecha:** 22 y 23 de octubre de 2026, en macOS con Python 3.13 y Rust estable.
 - **Mapas:** kimun 0.44. En black se excluyó `profiling/` (datos de prueba) y en redis `deps/` (código de terceros).
 
 ## Límites
 
-- Son 25 casos, con una corrida por bug y un solo modelo.
+- Son 47 casos, con una corrida por bug y un solo modelo.
+- En sc-cli los bugs están en solo cinco archivos, y la segunda ronda cambia a la vez el lenguaje, el proyecto y la herramienta de mutaciones.
 - Un bug de un token que un test señala es la tarea más fácil posible: el agente lee el traceback, hace grep y lee unas 40 líneas, sin importar el tamaño del archivo. Features, refactors y bugs sin un test que los señale pueden dar otro resultado.
 - El tiempo no sirve para comparar: la suite de black es la más lenta, la mayoría de los archivos rojos son de black y los agentes corrían en paralelo.
 
