@@ -1,0 +1,114 @@
+{
+ "score": 40.01338267156523,
+ "grade": "F-",
+ "files_analyzed": 10,
+ "total_loc": 6164,
+ "dimensions": [
+  {
+   "name": "Cognitive Complexity",
+   "weight": 0.32,
+   "score": 14.04481355762991,
+   "grade": "F--"
+  },
+  {
+   "name": "Duplication",
+   "weight": 0.21,
+   "score": 60.29850746268657,
+   "grade": "D"
+  },
+  {
+   "name": "Indentation Complexity",
+   "weight": 0.16,
+   "score": 55.754168645259234,
+   "grade": "F"
+  },
+  {
+   "name": "Halstead Effort",
+   "weight": 0.21,
+   "score": 48.26564202023561,
+   "grade": "F-"
+  },
+  {
+   "name": "File Size",
+   "weight": 0.1,
+   "score": 37.99903958468527,
+   "grade": "F--"
+  }
+ ],
+ "needs_attention": [
+  {
+   "path": "src/ui/mod.rs",
+   "score": 15.259606473316207,
+   "grade": "F--",
+   "issues": [
+    "Cognitive: 321",
+    "Indent: 2.4",
+    "Effort: 41978100",
+    "Size: 2974 LOC"
+   ]
+  },
+  {
+   "path": "src/main.rs",
+   "score": 30.69400419442451,
+   "grade": "F--",
+   "issues": [
+    "Cognitive: 171",
+    "Indent: 1.9",
+    "Effort: 12190280",
+    "Size: 1659 LOC"
+   ]
+  },
+  {
+   "path": "src/api/client.rs",
+   "score": 57.30961642249328,
+   "grade": "D-",
+   "issues": [
+    "Cognitive: 38"
+   ]
+  },
+  {
+   "path": "src/story_editor.rs",
+   "score": 69.47540706459272,
+   "grade": "C-",
+   "issues": [
+    "Cognitive: 26"
+   ]
+  },
+  {
+   "path": "src/config.rs",
+   "score": 83.42635169952864,
+   "grade": "B+",
+   "issues": []
+  },
+  {
+   "path": "src/story_creator.rs",
+   "score": 87.2529348835847,
+   "grade": "A-",
+   "issues": []
+  },
+  {
+   "path": "src/git/operations.rs",
+   "score": 92.45112979284055,
+   "grade": "A",
+   "issues": []
+  },
+  {
+   "path": "src/api/mod.rs",
+   "score": 99.51314437982377,
+   "grade": "A++",
+   "issues": []
+  },
+  {
+   "path": "src/git/mod.rs",
+   "score": 99.51385673005353,
+   "grade": "A++",
+   "issues": []
+  },
+  {
+   "path": "src/lib.rs",
+   "score": 100.00000000000001,
+   "grade": "A++",
+   "issues": []
+  }
+ ]
+}

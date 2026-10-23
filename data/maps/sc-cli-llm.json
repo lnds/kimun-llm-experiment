@@ -1,0 +1,222 @@
+{
+  "metric": "readiness for coding agents",
+  "legend": [
+    {
+      "label": "LLM risk",
+      "heat": -1.0
+    },
+    {
+      "label": "needs care",
+      "heat": 0.0
+    },
+    {
+      "label": "LLM-friendly",
+      "heat": 1.0
+    }
+  ],
+  "summary": [
+    {
+      "label": "an LLM risk",
+      "share": 0.8708630759247242,
+      "heat": -1.0
+    },
+    {
+      "label": "needing care",
+      "share": 0.07511356262167423,
+      "heat": 0.0
+    },
+    {
+      "label": "LLM-friendly",
+      "share": 0.05402336145360156,
+      "heat": 1.0
+    }
+  ],
+  "callouts": [
+    {
+      "node": 12,
+      "label": "Most LLM risk: src/ui/",
+      "heat": -1.0
+    },
+    {
+      "node": 5,
+      "label": "Most LLM-friendly: src/git/",
+      "heat": 1.0
+    }
+  ],
+  "nodes": [
+    {
+      "name": "",
+      "path": "src",
+      "x": 500.0,
+      "y": 500.0,
+      "r": 500.0,
+      "depth": 0,
+      "parent": null,
+      "dir": true,
+      "lines": 6164
+    },
+    {
+      "name": "api/",
+      "path": "src/api",
+      "x": 766.1968136782084,
+      "y": 438.551620389022,
+      "r": 200.32577259865073,
+      "depth": 1,
+      "parent": 0,
+      "dir": true,
+      "lines": 820
+    },
+    {
+      "name": "client.rs",
+      "path": "src/api/client.rs",
+      "x": 692.7019855887686,
+      "y": 438.551620389022,
+      "r": 109.11549863472311,
+      "depth": 2,
+      "parent": 1,
+      "dir": false,
+      "lines": 607,
+      "heat": -1.0,
+      "label": "score 57.3 (D-): an LLM risk"
+    },
+    {
+      "name": "mod.rs",
+      "path": "src/api/mod.rs",
+      "x": 884.1700352501755,
+      "y": 438.551620389022,
+      "r": 64.63710515219586,
+      "depth": 2,
+      "parent": 1,
+      "dir": false,
+      "lines": 213,
+      "heat": 1.0,
+      "label": "score 99.5 (A++): LLM-friendly"
+    },
+    {
+      "name": "config.rs",
+      "path": "src/config.rs",
+      "x": 368.5870027991359,
+      "y": 104.98988938027958,
+      "r": 65.98854967060743,
+      "depth": 1,
+      "parent": 0,
+      "dir": false,
+      "lines": 222,
+      "heat": 0.0,
+      "label": "score 83.4 (B+): needs care"
+    },
+    {
+      "name": "git/",
+      "path": "src/git",
+      "x": 573.7665092950028,
+      "y": 152.31798690207194,
+      "r": 126.86328277924405,
+      "depth": 1,
+      "parent": 0,
+      "dir": true,
+      "lines": 257
+    },
+    {
+      "name": "mod.rs",
+      "path": "src/git/mod.rs",
+      "x": 635.214048366765,
+      "y": 152.31798690207194,
+      "r": 47.70029783299401,
+      "depth": 2,
+      "parent": 5,
+      "dir": false,
+      "lines": 116,
+      "heat": 1.0,
+      "label": "score 99.5 (A++): LLM-friendly"
+    },
+    {
+      "name": "operations.rs",
+      "path": "src/git/operations.rs",
+      "x": 517.2084885247649,
+      "y": 152.31798690207194,
+      "r": 52.58981613451828,
+      "depth": 2,
+      "parent": 5,
+      "dir": false,
+      "lines": 141,
+      "heat": 0.0,
+      "label": "score 92.5 (A): needs care"
+    },
+    {
+      "name": "lib.rs",
+      "path": "src/lib.rs",
+      "x": 744.0800260819201,
+      "y": 664.3700813694583,
+      "r": 8.857722937243917,
+      "depth": 1,
+      "parent": 0,
+      "dir": false,
+      "lines": 4,
+      "heat": 1.0,
+      "label": "score 100.0 (A++): LLM-friendly"
+    },
+    {
+      "name": "main.rs",
+      "path": "src/main.rs",
+      "x": 580.3739096566749,
+      "y": 790.9976745234668,
+      "r": 180.39117570928244,
+      "depth": 1,
+      "parent": 0,
+      "dir": false,
+      "lines": 1659,
+      "heat": -1.0,
+      "label": "score 30.7 (F--): an LLM risk"
+    },
+    {
+      "name": "story_creator.rs",
+      "path": "src/story_creator.rs",
+      "x": 761.1087631643443,
+      "y": 176.27113482559878,
+      "r": 44.28861468621959,
+      "depth": 1,
+      "parent": 0,
+      "dir": false,
+      "lines": 100,
+      "heat": 0.0,
+      "label": "score 87.3 (A-): needs care"
+    },
+    {
+      "name": "story_editor.rs",
+      "path": "src/story_editor.rs",
+      "x": 333.79946860054224,
+      "y": 762.5201163214656,
+      "r": 50.10684763837438,
+      "depth": 1,
+      "parent": 0,
+      "dir": false,
+      "lines": 128,
+      "heat": -1.0,
+      "label": "score 69.5 (C-): an LLM risk"
+    },
+    {
+      "name": "ui/",
+      "path": "src/ui",
+      "x": 288.91487826538196,
+      "y": 438.551620389022,
+      "r": 259.24071693968796,
+      "depth": 1,
+      "parent": 0,
+      "dir": true,
+      "lines": 2974
+    },
+    {
+      "name": "mod.rs",
+      "path": "src/ui/mod.rs",
+      "x": 288.91487826538196,
+      "y": 438.551620389022,
+      "r": 241.52527106520012,
+      "depth": 2,
+      "parent": 12,
+      "dir": false,
+      "lines": 2974,
+      "heat": -1.0,
+      "label": "score 15.3 (F--): an LLM risk"
+    }
+  ]
+}
