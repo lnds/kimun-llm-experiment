@@ -1,0 +1,1 @@
+When I run `sc-cli add Fix login` and type a description with paragraphs, the prompt stops as soon as I press Enter on the first blank line, even though it says "press Enter twice to finish". The story gets created with only the first paragraph, and whatever I meant to type next never makes it into the description.

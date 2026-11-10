@@ -1,0 +1,1 @@
+When I run `sc-cli add Fix login --type bug`, the description prompt says "press Enter twice to finish", but pressing Enter twice does nothing and it keeps waiting. It only finishes after a third Enter. If I keep typing after the two blank lines, that text ends up in the description too.

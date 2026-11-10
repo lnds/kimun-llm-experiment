@@ -1,12 +1,13 @@
 # ¿Le importa a un agente la salud del código?
 
-Datos y scripts del artículo [*¿Tu código es amistoso para un LLM?*](https://kimun.tools/blog/is-your-code-llm-friendly/) del blog de Kimün ([en inglés](https://kimun.tools/en/blog/is-your-code-llm-friendly/)).
+Datos y scripts de dos artículos del blog de Kimün: [*¿Tu código es amistoso para un LLM?*](https://kimun.tools/blog/is-your-code-llm-friendly/) ([en inglés](https://kimun.tools/en/blog/is-your-code-llm-friendly/)) y [*Cuando ninguna prueba avisa*](https://kimun.tools/blog/when-no-test-helps/) ([en inglés](https://kimun.tools/en/blog/when-no-test-helps/)).
 
-Tres partes:
+Cuatro partes:
 
 1. **El mapa.** `km map --color-by llm` de [kimun](https://kimun.tools) sobre nueve proyectos conocidos. Cada archivo se pinta según su nota de `km score`: azul desde 95 ("amistoso para un LLM"), gris entre 70 y 95, naranja bajo 70. El umbral de 95 es la contraparte, en la escala de kimun, del 9,5 de Code Health que CodeScene propone para trabajar con agentes. No es una equivalencia calibrada.
 2. **Primera ronda.** 25 bugs de un token inyectados en click, flask y black: 13 en archivos azules (nota ≥ 85) y 12 en naranjas (< 65). Un agente por bug intenta arreglarlo, y luego se vuelve a correr la suite completa.
 3. **Segunda ronda.** 22 bugs en [sc-cli](https://github.com/lnds/sc-cli) (Rust, nota F- 40,0), un proyecto que casi seguro no está en los datos de entrenamiento del modelo. Las mutaciones las generó [kalku](https://kalku.tools).
+4. **Tercera ronda, sin pruebas.** 20 mutantes de sc-cli que la suite no detecta. El agente recibe solo un reporte del síntoma, escrito como lo haría un usuario; una prueba escondida, que el agente nunca ve, juzga el arreglo.
 
 ## Resultados de la primera ronda
 
@@ -39,6 +40,26 @@ Los azules están en `git/operations.rs` (92,5) y `git/mod.rs` (99,5); los naran
 
 kalku lanzó 304 mutantes en esos archivos (todos en los azules y en `config.rs`, 60 por archivo en los naranjas) y la suite mató 49. De ellos se descartaron los cambios de texto y los que borran una rama completa, y quedaron los que hacen fallar entre 1 y 15 pruebas.
 
+## Resultados de la tercera ronda
+
+| | Azules (n=10) | Naranjas (n=10) |
+|---|---|---|
+| Arreglo correcto (la prueba escondida pasa) | 10/10 | 10/10 |
+| La suite pasa | 10/10 | 10/10 |
+| Herramientas usadas (mediana) | 6 | 7,5 |
+| Tokens de entrada acumulados (mediana) | 370 mil | 436 mil |
+| Código que el agente sumó al contexto (mediana) | 10 mil tokens | 11 mil tokens |
+
+Los azules están en `git/mod.rs`, `git/operations.rs` y `story_creator.rs` (87,3); los naranjas en `ui/mod.rs`, `main.rs` y `api/client.rs`. Spearman entre la nota y los tokens: −0,42. El naranja gastó más que el azul en el 71% de los pares; permutación sobre la diferencia de medianas, p = 0,054. Ningún agente escribió pruebas, y los 20 deshicieron la mutación exacta en el archivo correcto.
+
+La ronda se corrió dos veces. La primera (`data/results-sc-cli-no-tests.json`), con 20 agentes a la vez, no sirve para comparar: las compilaciones se esperaban entre sí y los agentes vigilaban `cargo test` con bucles de `sleep` y `ps`, lo que triplicó los tokens (922 mil contra 1,35 millones de mediana). La segunda (`data/results-sc-cli-no-tests-nt2.json`) corrió de a 4 agentes, con `prompt-no-tests-2.md`, que les pide correr cada comando en primer plano.
+
+```bash
+python3 scripts/setup_trials_nt.py nt2            # copias en work/trials-nt2, con las mutaciones de data/mutations/sc-cli-no-tests.jsonl
+python3 scripts/hidden.py work/sc-cli WEKUFE --mutate   # comprueba que la prueba escondida falla con el mutante
+python3 scripts/analyze_nt.py work/runs-nt2 nt2   # data/results-sc-cli-no-tests-nt2.json
+```
+
 ## Contenido
 
 | Ruta | Qué es |
@@ -51,6 +72,8 @@ kalku lanzó 304 mutantes en esos archivos (todos en los azules y en `config.rs`
 | `data/trials.json` | Las 25 copias: qué mutación lleva cada una y la nota de su archivo |
 | `data/kalku/` | Los reportes de kalku sobre sc-cli y, en `verified.jsonl`, cuántas pruebas hace fallar cada mutante muerto |
 | `data/mutations/sc-cli.jsonl`, `data/trials-sc-cli.json`, `data/results-sc-cli.json` | Lo mismo para la segunda ronda |
+| `data/mutations/sc-cli-no-tests.jsonl`, `data/reports/`, `data/hidden/` | Tercera ronda: los 20 mutantes, el reporte que recibió cada agente y la prueba escondida que juzga su arreglo |
+| `prompt-no-tests.md`, `prompt-no-tests-2.md` | El prompt de la tercera ronda, en su primera y segunda corrida |
 | `data/results.json` | Cada intento: herramientas, tokens de entrada acumulados, contexto inicial y su crecimiento, segundos, si la suite pasa, si el arreglo deshace la mutación exacta y el reporte final del agente |
 
 ## Reproducir
@@ -78,8 +101,8 @@ La segunda ronda usa sc-cli en el commit `0d9c860` y kalku 0.24: `kalku init` en
 ## Cómo se corrió
 
 - **Con quién:** el experimento se diseñó, se corrió y se analizó con Claude (Opus) en Claude Code. Claude escribió los scripts de este repositorio.
-- **Modelo de los agentes:** Claude Sonnet, como subagentes de Claude Code (no con `claude -p`), con 20 agentes a la vez. `analyze.py` lee los dos formatos de sesión.
-- **Fecha:** 22 y 23 de octubre de 2026, en macOS con Python 3.13 y Rust estable.
+- **Modelo de los agentes:** Claude Sonnet, como subagentes de Claude Code (no con `claude -p`), con 20 agentes a la vez (4 en la segunda corrida de la tercera ronda). `analyze.py` lee los dos formatos de sesión.
+- **Fecha:** 22 y 23 de octubre de 2026 (tercera ronda: 8 y 9 de noviembre), en macOS con Python 3.13 y Rust estable.
 - **Mapas:** kimun 0.45, con la paleta naranja y azul (hasta 0.44 era roja y verde). En black se excluyó `profiling/` (datos de prueba) y en redis `deps/` (código de terceros).
 
 ## Límites
